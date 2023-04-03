@@ -1,14 +1,17 @@
 import { Route, Switch } from "react-router-dom";
 import React from "react";
 import LoginFormPage from "./components/LoginFormPage";
+import SignupFormPage from "./components/SignupFormPage";
+import Navigation from "./components/Navigation";
 
 
 function App() {
   return (
     <>
     <Switch>
-        <h1>Hello World</h1>
+      <Navigation/>
       <Route path="/login">
+        <h1>Welcome to WhereBnB</h1>
         <LoginFormPage />
       </Route>
       <Route path="/signup">
