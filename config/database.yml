@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: WhereBnB_production
-  username: WhereBnB
-  password: <%= ENV["WHEREBNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
