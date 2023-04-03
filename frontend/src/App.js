@@ -8,8 +8,8 @@ import Navigation from "./components/Navigation";
 function App() {
   return (
     <>
-    <Switch>
       <Navigation/>
+    <Switch>
       <Route path="/login">
         <h1>Welcome to WhereBnB</h1>
         <LoginFormPage />
