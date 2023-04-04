@@ -32,7 +32,7 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
+    return setErrors(['Passwords must match']);
   };
 
   return (
