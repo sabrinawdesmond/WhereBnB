@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
-function SignupFormPage() {
+function SignupForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
@@ -37,51 +37,58 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
+    <div class='SignUp'>
+    <h4>Sign Up</h4>
+    </div>
+    <br />
       <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error) => <li key={error}>{error}</li>)}
-        </ul>
+      <h3>Welcome to whereBnB</h3>
         <label>
-          Email
+          <br />
+        <ul>
+        {errors.map(error => <li class='errors' key={error}>{error}</li>)}
+      </ul>
           <input
             type="text"
             value={email}
+            placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </label>
         <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password
           <input
             type="password"
             value={password}
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
         <label>
-          Confirm Password
           <input
             type="password"
             value={confirmPassword}
+            placeholder="Confirm Password"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <div class='signupButtonBox'>
+          <br />
+        <button class='signupButton' type="submit">Sign Up</button>
+        </div>
       </form>
+      <div class="links">
+        <br />
+      <button class='externalLinkGitHub' type="submit">GitHub</button>
+    
+      <button class='externalLinksLinkedin' type="submit">LinkedIn</button><br />
+    
+      <button class='externalLinksEmail' type="submit">Email</button>
+      </div>
     </>
   );
 }
 
-export default SignupFormPage;
+export default SignupForm;

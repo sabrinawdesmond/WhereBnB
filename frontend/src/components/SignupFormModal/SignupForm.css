@@ -1,16 +1,4 @@
-body {
-  background-color: white;
-}
-
-input {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 6px;
-  height: 40px;
-  border: 1px solid #B0B0B0;
-}
-
-.submitButton {
+.signupButton {
   transition: opacity 1.25s;
   background-image: linear-gradient(to left, 
     #e61e4d 27.5%,
@@ -30,23 +18,11 @@ input {
   border: none;
 }
 
-.errors {
-  color: #C13515;
-  padding-bottom: 20px;
-}
-
-.loginButton {
+.signupButtonBox {
   border-bottom: 1px solid #B0B0B0;
   padding-bottom: 20px;
 }
 
-.loginSignUp {
-  text-align: center;
-  margin: 0 auto;
-  width: 70%;
-  color: rgb(0, 0, 0, 0.6);
-  padding: 10px;
-}
 
 .externalLinkGitHub {
   font-family: "Montserrat", sans-serif;
@@ -91,9 +67,27 @@ h3 {
   justify-content: flex-start;
 }
 
-.signuplink {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
+body {
+  background-color: white;
 }
 
+input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 6px;
+  height: 40px;
+  border: 1px solid #B0B0B0;
+}
+
+.errors {
+  color: #C13515;
+  padding-bottom: 20px;
+}
+
+.SignUp {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+  color: rgb(0, 0, 0, 0.6);
+  padding: 10px;
+}

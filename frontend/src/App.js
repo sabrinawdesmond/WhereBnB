@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import React from "react";
-import SignupFormPage from "./components/SignupFormPage";
+import SignupForm from './components/SignupFormModal'
 import Navigation from "./components/Navigation";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <Navigation />
       <Switch>
         <Route path="/signup">
-          <SignupFormPage />
+          <SignupForm />
         </Route>
       </Switch>
     </>
