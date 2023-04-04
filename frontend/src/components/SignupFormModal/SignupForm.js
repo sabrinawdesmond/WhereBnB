@@ -58,6 +58,15 @@ function SignupForm() {
         </label>
         <label>
           <input
+            type="text"
+            value={username}
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          <input
             type="password"
             value={password}
             placeholder="Password"

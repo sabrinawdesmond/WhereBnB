@@ -19,7 +19,7 @@ input {
     #bd1e59 75%,
     #bd1e59 100%
   );
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: bolder;
   font-size: medium;
   color: white;
@@ -36,8 +36,7 @@ input {
 }
 
 .loginButton {
-  border-bottom: 1px solid #B0B0B0;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .loginSignUp {
@@ -49,7 +48,7 @@ input {
 }
 
 .externalLinkGitHub {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: bolder;
   font-size: small;
   color: black;
@@ -62,7 +61,7 @@ input {
   margin-bottom: 10px;
 }
 .externalLinksLinkedin {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: bolder;
   font-size: small;
   color: black;
@@ -75,8 +74,8 @@ input {
   margin-bottom: 10px;
 }
 .externalLinksEmail {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bolder;
+  font-family: "Manrope", sans-serif;
+  font-weight: 900;
   font-size: small;
   color: black;
   box-sizing: border-box;
@@ -89,6 +88,7 @@ input {
 
 h3 {
   justify-content: flex-start;
+  font-weight: 900;
 }
 
 .signuplink {
@@ -97,3 +97,27 @@ h3 {
   justify-content: center;
 }
 
+.demoUser {
+  border-bottom: 1px solid #B0B0B0;
+  padding-bottom: 20px;
+}
+
+.demoButton {
+  transition: opacity 1.25s;
+  background-image: linear-gradient(to left, 
+    #e61e4d 27.5%,
+    #e31c5f 40%,
+    #d70466 57.5%,
+    #bd1e59 75%,
+    #bd1e59 100%
+  );
+  font-family: "Manrope", sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  color: white;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+}

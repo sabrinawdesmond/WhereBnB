@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 #modal {
@@ -26,7 +26,8 @@
 #modal-content {
   position: absolute;
   background-color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-weight: bolder;
   padding: 25px;
   border-radius: 16px;
   width: 500px;
