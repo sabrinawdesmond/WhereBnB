@@ -1,3 +1,14 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.navBar {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 0.5px inset darkgrey; 
+}

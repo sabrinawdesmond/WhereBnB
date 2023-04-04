@@ -5,12 +5,10 @@ import { useDispatch } from 'react-redux';
 
 function LoginForm() {
   const dispatch = useDispatch();
-  // const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  // if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,31 +29,52 @@ function LoginForm() {
 
   return (
     <>
-    <h1>Log In</h1>
+    <div class='loginSignUp'>
+    <h4>Log In or Sign Up</h4>
+    </div>
+    <br></br>
       <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
+      <h3>Welcome to whereBnB</h3>
       <label>
-        Username or Email
+        <br></br>
         <input
           type="text"
+          placeholder='Email'
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
       </label>
       <label>
-        Password
+        <br>
+        </br>
         <input
           type="password"
+          placeholder='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <ul>
+      <br></br>
+        {errors.map(error => <li class='errors' key={error}>{error}</li>)}
+      </ul>
+      <div class='loginButton'>
+      <button class='submitButton' type="submit">Continue</button>
+      </div>
     </form>
+      <div class="links">
+        <br />
+      <button class='externalLinkGitHub' type="submit">GitHub</button>
+    
+      <button class='externalLinksLinkedin' type="submit">LinkedIn</button><br />
+    
+      <button class='externalLinksEmail' type="submit">Email</button>
+      </div>
+      <div class='signuplink'>
+        <h5>New to whereBnB? Signup!</h5>
+      </div>
     </>
   );
 }
