@@ -19,8 +19,7 @@
 }
 
 .signupButtonBox {
-  border-bottom: 1px solid #B0B0B0;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 
@@ -84,7 +83,7 @@ input {
   padding-bottom: 20px;
 }
 
-.ignUp {
+.SignUp {
   text-align: center;
   margin: 0 auto;
   width: 70%;

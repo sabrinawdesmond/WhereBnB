@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
+
 function SignupForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
@@ -12,6 +13,11 @@ function SignupForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+
+  const demoLogin = (e) => {
+    e.preventDefault()
+    return dispatch(sessionActions.login({credential: 'demo@user.io', password: 'password'}))
+  }
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -88,13 +94,20 @@ function SignupForm() {
         <button class='signupButton' type="submit">Sign Up</button>
         </div>
       </form>
+      <div class='demoUser'>
+      <button class='demoButton' onClick={demoLogin}>Demo User</button>
+      </div>
       <div class="links">
         <br />
+        <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank">
       <button class='externalLinkGitHub' type="submit">GitHub</button>
-    
-      <button class='externalLinksLinkedin' type="submit">LinkedIn</button><br />
-    
-      <button class='externalLinksEmail' type="submit">Email</button>
+        </a>
+        <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank">
+        <button class='externalLinksLinkedin' type="submit">LinkedIn</button>
+        </a>
+        <a href="mailto:sabrinawdesmond@gmail.com" target="_blank">
+        <button class='externalLinksEmail' type="submit">Email</button>
+        </a>
       </div>
     </>
   );
