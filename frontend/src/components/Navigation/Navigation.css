@@ -32,11 +32,19 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  padding: 16px;
   flex-direction: row;
 }
 
 .title-container h2 {
   color: #FF385C;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: bolder;
+}
+
+.navBar a {
+  text-decoration: none;
 }
