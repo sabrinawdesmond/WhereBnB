@@ -52,7 +52,7 @@ function SignupForm() {
         <label>
           <br />
         <ul>
-        {errors.map(error => <li class='errors' key={error}>{error}</li>)}
+        {errors.map(error => <li className='errors' key={error}>{error}</li>)}
       </ul>
           <input
             type="text"

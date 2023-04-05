@@ -38,12 +38,12 @@ function Navigation() {
         </Link>
         <h3>Search</h3>
         <div className="navLinks">
-          <div class="profileDrop">
+          <div className="profileDrop">
             <a href="/">
-              <img src={menuIcon} alt="logo" />
+              <img src={menuIcon} alt="menu" />
             </a>
             <a href="/">
-              <img src={profileIcon} alt="logo" />
+              <img src={profileIcon} alt="profile" />
             </a>
           </div>
           {sessionLinks}
