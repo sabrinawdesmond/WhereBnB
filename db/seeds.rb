@@ -98,10 +98,10 @@ ApplicationRecord.transaction do
       longitude: Faker::Address.longitude, 
       latitude: Faker::Address.latitude, 
       price: Faker::Number.between(from: 1, to: 1000),
-      num_beds: Faker::Number.between(from: 1, to: 10), 
-      num_rooms: Faker::Number.between(from: 1, to: 8),
-      num_bathrooms: Faker::Number.between(from: 1, to: 5),
-      host_id: 1
+      num_beds: Faker::Number.between(from: 1, to: 4), 
+      num_rooms: Faker::Number.between(from: 1, to: 4),
+      num_bathrooms: Faker::Number.between(from: 1, to: 3),
+      host_id: 2
     })
   end
 
