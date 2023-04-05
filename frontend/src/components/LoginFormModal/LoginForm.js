@@ -32,12 +32,12 @@ function LoginForm() {
 
   return (
     <>
-    <div class='loginSignUp'>
+    <div className='loginSignUp'>
     <h4>Log In or Sign Up</h4>
     </div>
     <br></br>
       <form onSubmit={handleSubmit}>
-      <h3>Welcome to whereBnB</h3>
+      <h3>Welcome to Wherebnb</h3>
       <label>
         <br></br>
         <input
@@ -61,29 +61,29 @@ function LoginForm() {
       </label>
       <ul>
       <br></br>
-        {errors.map(error => <li class='errors' key={error}>{error}</li>)}
+        {errors.map(error => <li className='errors' key={error}>{error}</li>)}
       </ul>
-      <div class='loginButton'>
-      <button class='submitButton' type="submit">Continue</button>
+      <div className='loginButton'>
+      <button className='submitButton' type="submit">Continue</button>
       </div>
     </form>
-      <div class='demoUser'>
-      <button class='demoButton' onClick={demoLogin}>Demo User</button>
+      <div className='demoUser'>
+      <button className='demoButton' onClick={demoLogin}>Demo User</button>
       </div>
-      <div class="links">
+      <div className="links">
         <br />
-        <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank">
-      <button class='externalLinkGitHub' type="submit">GitHub</button>
+        <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank" rel="noopener noreferrer">
+      <button className='externalLinkGitHub' type="submit">GitHub</button>
         </a>
-        <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank">
-        <button class='externalLinksLinkedin' type="submit">LinkedIn</button>
+        <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank" rel="noopener noreferrer">
+        <button className='externalLinksLinkedin' type="submit">LinkedIn</button>
         </a>
-        <a href="mailto:sabrinawdesmond@gmail.com" target="_blank">
-        <button class='externalLinksEmail' type="submit">Email</button>
+        <a href="mailto:sabrinawdesmond@gmail.com" target="_blank" rel="noopener noreferrer">
+        <button className='externalLinksEmail' type="submit">Email</button>
         </a>
       </div>
-      <div class='signuplink'>
-        <h5>New to whereBnB? Signup!</h5>
+      <div className='signuplink'>
+        <h5>New to Wherebnb? Signup!</h5>
       </div>
     </>
   );

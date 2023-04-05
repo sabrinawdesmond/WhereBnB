@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -8,6 +7,7 @@ import logoImage from './logo.png'
 import SignupFormModal from '../SignupFormModal';
 import menuIcon from './menuIcon.png'
 import profileIcon from'./profileIcon.png'
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -30,12 +30,17 @@ function Navigation() {
   return (
     <>
     <div className="navBar">
-      <div className="logo">
-      <a href="/">
+
+    <Link to="/">
+        <div className="logo-container">
         <img src={logoImage} alt="logo"  style={{ width: '40px', height: '40px' }} />
-        </a>
-      </div>
-        <h3>whereBnB</h3>
+          <div className="title-container">
+            <h2>Wherebnb</h2>
+          </div>
+        </div>
+      </Link>
+    
+        <h3>Search</h3>
       <div className="navLinks">
         <div class='profileDrop'>
       <a href="/">

@@ -43,12 +43,12 @@ function SignupForm() {
 
   return (
     <>
-    <div class='SignUp'>
+    <div className='SignUp'>
     <h4>Sign Up</h4>
     </div>
     <br />
       <form onSubmit={handleSubmit}>
-      <h3>Welcome to whereBnB</h3>
+      <h3>Welcome to Wherebnb</h3>
         <label>
           <br />
         <ul>
@@ -89,24 +89,24 @@ function SignupForm() {
             required
           />
         </label>
-        <div class='signupButtonBox'>
+        <div className='signupButtonBox'>
           <br />
-        <button class='signupButton' type="submit">Sign Up</button>
+        <button className='signupButton' type="submit">Sign Up</button>
         </div>
       </form>
-      <div class='demoUser'>
-      <button class='demoButton' onClick={demoLogin}>Demo User</button>
+      <div className='demoUser'>
+      <button className='demoButton' onClick={demoLogin}>Demo User</button>
       </div>
-      <div class="links">
+      <div className="links">
         <br />
-        <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank">
-      <button class='externalLinkGitHub' type="submit">GitHub</button>
+        <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank" rel="noopener noreferrer">
+      <button className='externalLinkGitHub' type="submit">GitHub</button>
         </a>
-        <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank">
-        <button class='externalLinksLinkedin' type="submit">LinkedIn</button>
+        <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank" rel="noopener noreferrer">
+        <button className='externalLinksLinkedin' type="submit">LinkedIn</button>
         </a>
-        <a href="mailto:sabrinawdesmond@gmail.com" target="_blank">
-        <button class='externalLinksEmail' type="submit">Email</button>
+        <a href="mailto:sabrinawdesmond@gmail.com" target="_blank" rel="noopener noreferrer">
+        <button className='externalLinksEmail' type="submit">Email</button>
         </a>
       </div>
     </>
