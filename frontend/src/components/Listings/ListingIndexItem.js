@@ -4,7 +4,9 @@ const ListingIndexItem = ({listing}) => {
   const dispatch = useDispatch();
   
   return (
-    <></>
+    <>
+    <h2>{listing.title}</h2>
+    </>
   )
 };
 

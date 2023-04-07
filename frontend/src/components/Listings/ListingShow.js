@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const ListingShow = () => {
   const dispatch = useDispatch();
-  const listingId = useParams();
+  const {listingId} = useParams();
   const listing = useSelector(getListing(listingId));
 
   useEffect(() => {
