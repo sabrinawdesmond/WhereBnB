@@ -9,13 +9,13 @@ require "faker"
 ApplicationRecord.transaction do
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  # User.destroy_all
+  User.destroy_all
   Listing.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!("users")
-  ApplicationRecord.connection.reset_pk_sequence!("listings")
+  # ApplicationRecord.connection.reset_pk_sequence!("listings")
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -88,7 +88,11 @@ ApplicationRecord.transaction do
     host_id: 1,
   )
 
+  #More listings
   20.times do |i|
+    num_beds = rand(3...8)
+    num_rooms = rand(num_beds+1..9)
+    num_bathrooms = rand(1..num_rooms)
     Listing.create!({
       title: titles[i],
       description: descriptions[i],
@@ -97,13 +101,14 @@ ApplicationRecord.transaction do
       country: Faker::Address.country,
       longitude: Faker::Address.longitude,
       latitude: Faker::Address.latitude,
-      price: Faker::Number.between(from: 1, to: 1000),
-      num_beds: Faker::Number.between(from: 1, to: 4),
-      num_rooms: Faker::Number.between(from: 1, to: 4),
-      num_bathrooms: Faker::Number.between(from: 1, to: 3),
-      host_id: 2,
+      price: Faker::Number.between(from: 200, to: 1000),
+      num_beds: num_beds,
+      num_rooms: num_rooms,
+      num_bathrooms: num_bathrooms,
+      host_id: 1,
     })
   end
+
 
   # More users
   10.times do
