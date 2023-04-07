@@ -28,7 +28,7 @@ export const getListings = state => {
 };
 
 export const getListing = (listingId) => state => {
-  return state.listings ? state.listings[state.listingId] : null
+  return state.listings ? state.listings[listingId] : null
 };
 
 //thunk actions
@@ -85,7 +85,7 @@ const listingsReducer = (state = {}, action) => {
       delete newState[action.listingId]
       return newState
     default:
-      state
+      return state
   }
 };
 

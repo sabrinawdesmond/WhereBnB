@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getListings, fetchListings } from "../../store/listings";
 import { useEffect } from "react";
-import ListingIndexItem from '`/ListingIndexItem';
+import ListingIndexItem from './ListingIndexItem';
 
 export const ListingIndex = () =>  {
   const dispatch = useDispatch();
@@ -11,12 +11,14 @@ export const ListingIndex = () =>  {
     dispatch(fetchListings(listings))
   }, [])
 
+  const listingsItems = listings.map(listing => {
+    return <ListingIndexItem listing={listing} key={listing.id}/>
+  })
+
   return (
     <>
-    <ul>
-      {listings.map(listing => 
-        <ListingIndexItem listing={listing} key={listing.id}/> 
-      )}
+    <ul className="listingsIndex">
+      {listingsItems}
     </ul>
     </>
   )
