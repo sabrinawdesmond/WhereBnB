@@ -1,0 +1,27 @@
+/* .listingsIndex {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px !important;
+} */
+
+.listings-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.listing-item {
+  background-color: #f2f2f2;
+  height: 263.25px;
+  width: 250.086px;
+  border-radius: 12px;
+  border: 1px solid #b0b0b0;
+  margin-bottom: 150px; 
+  justify-content: space-between;
+}
+
+.listingsIndex {
+  display: flex;
+  padding-left: 60px;
+  padding-right: 60px;
+}
