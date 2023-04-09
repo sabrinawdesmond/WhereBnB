@@ -6,7 +6,7 @@ const ListingIndexItem = ({ listing }) => {
 
   return (
     <li className="listing-item">
-      <h2>{listing.title}</h2>
+      <h3>{listing.title}</h3>
       <h4>{listing.description}</h4>
     </li>
   );
