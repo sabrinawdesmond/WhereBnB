@@ -13,11 +13,7 @@ const ListingShowPage = () => {
   useEffect(() => { 
     dispatch(fetchListing(listingId))
   }, [listingId, dispatch])
-
-  if (!listing) {
-    return <div>Loading...</div>;
-  }
-
+  
   return(
     <>
     <div className="ListingPage">
@@ -28,8 +24,8 @@ const ListingShowPage = () => {
       <p>{listing.country}</p>
     </ul>
     <p>{listing.description}</p>
-    <p>{listing.num_rooms}</p>
     <p>{listing.num_beds}</p>
+    <p>{listing.num_rooms}</p>
     <p>{listing.num_bathrooms}</p>
     </div>
     </>
