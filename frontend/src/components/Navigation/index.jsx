@@ -19,7 +19,6 @@ function Navigation() {
     sessionLinks = (
       <>
         <LoginFormModal />
-
         <SignupFormModal />
       </>
     );

@@ -2,9 +2,9 @@ import csrfFetch from "./csrf";
 
 //action constants
 
-export const RECEIVE_LISTINGS = '/listings/RECEIVE_LISTINGS';
-export const RECEIVE_LISTING = '/listings/RECEIVE_LISTING';
-export const REMOVE_LISTING = '/listings/REMOVE_LISTING';
+export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
+export const RECEIVE_LISTING = 'RECEIVE_LISTING';
+export const REMOVE_LISTING = 'REMOVE_LISTING';
 
 //actions
 
@@ -82,7 +82,7 @@ const listingsReducer = (state = {}, action) => {
     case RECEIVE_LISTINGS:
       return {...state, ...action.payload.listings }
     case RECEIVE_LISTING:
-      return {[action.listing.id]: action.listing}
+      return {...state, [action.payload.listing.id]: action.payload.listing}
     case REMOVE_LISTING:
       const newState = {...state}
       delete newState[action.listingId]
