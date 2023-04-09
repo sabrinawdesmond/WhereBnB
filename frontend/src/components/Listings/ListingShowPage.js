@@ -23,11 +23,14 @@ const ListingShowPage = () => {
     <div className="ListingPage">
     <h2>{listing.title}</h2>
     <ul>
-      {listing.address}
-      {listing.city}
-      {listing.country}
+      <p>{listing.address}</p>
+      <p>{listing.city}</p>
+      <p>{listing.country}</p>
     </ul>
     <p>{listing.description}</p>
+    <p>{listing.num_rooms}</p>
+    <p>{listing.num_beds}</p>
+    <p>{listing.num_bathrooms}</p>
     </div>
     </>
   )
