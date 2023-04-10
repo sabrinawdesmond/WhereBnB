@@ -2,22 +2,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchListing, getListing } from "../../store/listings";
 import { useEffect } from "react";
+import airbnb from "./airbnb.png"
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
   const {listingId} = useParams();
   const listing = useSelector(getListing(listingId));
-  console.log("here it is")
-  console.log(listing)
 
   useEffect(() => { 
     dispatch(fetchListing(listingId))
   }, [listingId, dispatch])
+
+  if (!listing) {
+    return null
+  }
   
   return(
     <>
     <div className="ListingPage">
-    <h2>{listing.title}</h2>
+    <h1>{listing.title}</h1>
+    <div className="listing-photo">
+            <img src={airbnb} alt="photo" />
+            </div>
     <ul>
       <p>{listing.address}</p>
       <p>{listing.city}</p>

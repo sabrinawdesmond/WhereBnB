@@ -6,7 +6,7 @@ class Api::ListingsController < ApplicationController
 
   def show
     @listing = Listing.find_by(params[:id])
-    render :show
+    render "/api/listings/show"
   end
 
   private
