@@ -4,6 +4,7 @@ import { fetchListing, getListing } from "../../store/listings";
 import { useEffect } from "react";
 import airbnb from "./airbnb.png";
 import "./ListingShowPage.css";
+import ListingStats from "./ListingStats";
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
@@ -29,22 +30,26 @@ const ListingShowPage = () => {
       <div className="ListingPage">
         <div className="photos">
           <div className="listing-photo">
-            <img src={airbnb} alt="photo" />
+            <img src={airbnb} alt="listingPhoto" />
             <div className="listing-small-photos">
-              <img src={airbnb} alt="photo" />
-              <img src={airbnb} alt="photo" />
-              <img src={airbnb} alt="photo" />
-              <img src={airbnb} alt="photo" />
+              <img src={airbnb} alt="listingPhoto" />
+              <img src={airbnb} alt="listingPhoto" />
+              <img src={airbnb} alt="listingPhoto" />
+              <img src={airbnb} alt="listingPhoto" />
             </div>
           </div>
         </div>
       </div>
       <div className="host-room-info">
-    <h2>Entire home hosted by Patrick</h2>
+        <h2>Entire home hosted by Patrick</h2>
       </div>
       <div className="room-info">
-        <h3>Guests: {listing.numBeds * 2} · Beds: {listing.numBeds} · Bathrooms: {listing.numBathrooms}</h3>
+        <h3>
+          Guests: {listing.numBeds * 2} · Beds: {listing.numBeds} · Bathrooms:{" "}
+          {listing.numBathrooms}
+        </h3>
       </div>
+        <ListingStats />
       <div className="listing-description">
         <p>{listing.description}</p>
       </div>
