@@ -11,10 +11,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Manrope", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding-bottom: 20px;
   padding-top: 20px;
   border-bottom: 1px solid #B0B0B0; 
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .profileDrop {

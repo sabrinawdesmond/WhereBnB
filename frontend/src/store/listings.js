@@ -42,7 +42,7 @@ export const fetchListings = () => async dispatch => {
 };
 
 export const fetchListing = (listingId) => async dispatch => {
-  debugger
+  
   const response = await csrfFetch (`/api/listings/${listingId}`);
   const data = await response.json();
   dispatch(receiveListing(data))
@@ -82,7 +82,7 @@ const listingsReducer = (state = {}, action) => {
     case RECEIVE_LISTINGS:
       return {...state, ...action.payload.listings }
     case RECEIVE_LISTING:
-      return {...state, [action.payload.listing.id]: action.payload.listing}
+      return {...state, [action.payload.id]: action.payload}
     case REMOVE_LISTING:
       const newState = {...state}
       delete newState[action.listingId]

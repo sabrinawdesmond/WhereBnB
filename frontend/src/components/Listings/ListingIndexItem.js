@@ -14,9 +14,12 @@ const ListingIndexItem = ({ listing }) => {
         <div className="photo-container">
             <img src={airbnb} alt="photo" />
             </div>
-          <h3>{listing.city}, {listing.country}</h3>
-          <br></br>
-          <h4>${listing.price} per night</h4>
+          <h4>{<span>{listing.city}, {listing.country}</span>}</h4>
+          <div className="distance-dates">
+            <h4>500 miles away</h4>
+          <h4>July 9-14</h4>
+          </div>
+          <h4>{<span>${listing.price}</span>} per night</h4>
         </Link>
       </div>
     </div>

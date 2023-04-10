@@ -2,42 +2,51 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchListing, getListing } from "../../store/listings";
 import { useEffect } from "react";
-import airbnb from "./airbnb.png"
+import airbnb from "./airbnb.png";
+import "./ListingShowPage.css";
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
-  const {listingId} = useParams();
+  const { listingId } = useParams();
   const listing = useSelector(getListing(listingId));
 
-  useEffect(() => { 
-    debugger
-    dispatch(fetchListing(listingId))
-  }, [listingId, dispatch])
+  useEffect(() => {
+    dispatch(fetchListing(listingId));
+  }, [listingId, dispatch]);
 
   if (!listing) {
-    return null
+    return null;
   }
-  
-  return(
-    <>
-    <div className="ListingPage">
-    <h1>{listing?.title}</h1>
-    <div className="listing-photo">
-            <img src={airbnb} alt="photo" />
-            </div>
-    <ul>
-      <p>{listing?.address}</p>
-      <p>{listing?.city}</p>
-      <p>{listing?.country}</p>
-    </ul>
-    <p>{listing?.description}</p>
-    <p>{listing?.num_beds}</p>
-    <p>{listing?.num_rooms}</p>
-    <p>{listing?.num_bathrooms}</p>
-    </div>
-    </>
-  )
 
+  return (
+    <>
+      <div className="listing-info">
+        <h1>{listing?.title}</h1>
+        <span>
+          {listing.city}, {listing.country}
+        </span>
+      </div>
+      <div className="ListingPage">
+        <div className="photos">
+          <div className="listing-photo">
+            <img src={airbnb} alt="photo" />
+            <div className="listing-small-photos">
+              <img src={airbnb} alt="photo" />
+              <img src={airbnb} alt="photo" />
+              <img src={airbnb} alt="photo" />
+              <img src={airbnb} alt="photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="listing-description">
+        <p>{listing?.description}</p>
+        <p>{listing?.num_beds}</p>
+        <p>{listing?.num_rooms}</p>
+        <p>{listing?.num_bathrooms}</p>
+      </div>
+    </>
+  );
 };
 
 export default ListingShowPage;

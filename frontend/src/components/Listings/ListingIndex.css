@@ -23,7 +23,6 @@
   padding-top: 60px;
 }
 
-
 .photo-container {
   box-sizing: border-box;
   display: flex;
@@ -34,13 +33,28 @@
 
 .photo-container img {
   max-width: 100%;
-  max-height: 100%; 
+  max-height: 100%;
   border-radius: 12px;
 }
 
 .listing-photo img {
   max-width: 100%;
-  max-height: 100%; 
+  max-height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+.listing-item a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.listing-item  span {
+  font-weight: 1000;
+}
+/* .listing-item h3 span {
+  font-weight: 600;
+} */
+
+.distance-dates {
+  color: #717171;
 }

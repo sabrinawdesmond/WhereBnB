@@ -48,7 +48,7 @@ input {
 }
 
 .externalLinkGitHub {
-  font-family: "Manrope", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bolder;
   font-size: small;
   color: black;
@@ -61,7 +61,7 @@ input {
   margin-bottom: 10px;
 }
 .externalLinksLinkedin {
-  font-family: "Manrope", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bolder;
   font-size: small;
   color: black;
@@ -74,7 +74,7 @@ input {
   margin-bottom: 10px;
 }
 .externalLinksEmail {
-  font-family: "Manrope", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: small;
   color: black;
@@ -111,7 +111,7 @@ h3 {
     #bd1e59 75%,
     #bd1e59 100%
   );
-  font-family: "Manrope", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bolder;
   font-size: medium;
   color: white;
