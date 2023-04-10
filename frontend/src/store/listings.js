@@ -42,6 +42,7 @@ export const fetchListings = () => async dispatch => {
 };
 
 export const fetchListing = (listingId) => async dispatch => {
+  debugger
   const response = await csrfFetch (`/api/listings/${listingId}`);
   const data = await response.json();
   dispatch(receiveListing(data))

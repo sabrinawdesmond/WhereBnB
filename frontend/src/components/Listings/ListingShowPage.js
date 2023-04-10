@@ -10,6 +10,7 @@ const ListingShowPage = () => {
   const listing = useSelector(getListing(listingId));
 
   useEffect(() => { 
+    debugger
     dispatch(fetchListing(listingId))
   }, [listingId, dispatch])
 
@@ -20,19 +21,19 @@ const ListingShowPage = () => {
   return(
     <>
     <div className="ListingPage">
-    <h1>{listing.title}</h1>
+    <h1>{listing?.title}</h1>
     <div className="listing-photo">
             <img src={airbnb} alt="photo" />
             </div>
     <ul>
-      <p>{listing.address}</p>
-      <p>{listing.city}</p>
-      <p>{listing.country}</p>
+      <p>{listing?.address}</p>
+      <p>{listing?.city}</p>
+      <p>{listing?.country}</p>
     </ul>
-    <p>{listing.description}</p>
-    <p>{listing.num_beds}</p>
-    <p>{listing.num_rooms}</p>
-    <p>{listing.num_bathrooms}</p>
+    <p>{listing?.description}</p>
+    <p>{listing?.num_beds}</p>
+    <p>{listing?.num_rooms}</p>
+    <p>{listing?.num_bathrooms}</p>
     </div>
     </>
   )
