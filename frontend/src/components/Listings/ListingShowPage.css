@@ -68,3 +68,20 @@
     font-size: 16px;
   }
 
+
+.host-room-info {
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+
+.room-info h3 {
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+

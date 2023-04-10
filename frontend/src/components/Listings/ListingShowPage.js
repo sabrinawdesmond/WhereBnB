@@ -39,11 +39,14 @@ const ListingShowPage = () => {
           </div>
         </div>
       </div>
+      <div className="host-room-info">
+    <h2>Entire home hosted by Patrick</h2>
+      </div>
+      <div className="room-info">
+        <h3>Guests: {listing.numBeds * 2} · Beds: {listing.numBeds} · Bathrooms: {listing.numBathrooms}</h3>
+      </div>
       <div className="listing-description">
-        <p>{listing?.description}</p>
-        <p>{listing?.num_beds}</p>
-        <p>{listing?.num_rooms}</p>
-        <p>{listing?.num_bathrooms}</p>
+        <p>{listing.description}</p>
       </div>
     </>
   );
