@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
 import closeButton from "./close-24.png"
+import SignupForm from '../SignupFormModal/SignupForm';
+import { Modal } from '../../context/Modal';
 
 
 function LoginForm({ onClose }) {
@@ -9,6 +11,10 @@ function LoginForm({ onClose }) {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [showSignupFormModal, setShowSignupFormModal] = useState(false);
+  const [showLoginFormModal, setShowLoginFormModal] = useState(false);
+
+
 
   const demoLogin = (e) => {
     e.preventDefault()
@@ -30,6 +36,23 @@ function LoginForm({ onClose }) {
         else setErrors([res.statusText]);
       });
   }
+
+  const openSignupFormModal = () => {
+    setShowSignupFormModal(true);
+  };
+
+  const handleSignupClick = () => {
+    openSignupFormModal();
+    setShowLoginFormModal(false);
+  };
+
+  const handleCloseSignupForm = () => {
+    setShowSignupFormModal(false);
+  };
+
+  const handleCloseLoginForm = () => {
+    setShowLoginFormModal(false);
+  };
 
   return (
     <>
@@ -85,8 +108,18 @@ function LoginForm({ onClose }) {
         </a>
       </div>
       <div className='signuplink'>
-        <h5>New to Wherebnb? Signup!</h5>
+        <h5 onClick={handleSignupClick}>New to Wherebnb? Signup!</h5>
       </div>
+      {showLoginFormModal && (
+        <Modal onClose={handleCloseLoginForm}>
+          <LoginForm onClose={handleCloseLoginForm} />
+        </Modal>
+      )}
+      {showSignupFormModal && (
+        <Modal onClose={handleCloseSignupForm}>
+          <SignupForm onClose={handleCloseSignupForm} />
+        </Modal>
+      )}
     </>
   );
 }

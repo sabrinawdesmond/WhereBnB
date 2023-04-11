@@ -1,12 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
-import LoginFormModal from "../LoginFormModal";
 import logoImage from "./logo.png";
-import SignupFormModal from "../SignupFormModal";
-import menuIcon from "./menuIcon.png";
-import profileIcon from "./profileIcon.png";
 import { Link } from "react-router-dom";
 import LoggedInUserMenu from "./LoggedInUserMenu";
 import LoggedOutUserMenu from "./LoggedOutUserMenu";
@@ -18,12 +13,7 @@ function Navigation() {
   if (sessionUser) {
     sessionLinks = <LoggedInUserMenu user={sessionUser} />;
   } else {
-    sessionLinks = <LoggedOutUserMenu />
-      // <>
-      //   <LoginFormModal />
-      //   <SignupFormModal />
-      // </>
-    
+    sessionLinks = <LoggedOutUserMenu /> 
   }
 
   return (
