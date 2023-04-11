@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 
 #modal {
@@ -26,7 +26,7 @@
 #modal-content {
   position: absolute;
   background-color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Figtree", sans-serif;
   font-weight: bolder;
   padding: 25px;
   border-radius: 16px;

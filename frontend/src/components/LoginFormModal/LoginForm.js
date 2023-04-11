@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import closeButton from "./close-24.png"
 import SignupForm from '../SignupFormModal/SignupForm';
 import { Modal } from '../../context/Modal';
+import './LoginForm.css'
 
 
 function LoginForm({ onClose }) {
