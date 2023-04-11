@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import closeButton from "./close-24.png"
 
 
-function SignupForm() {
+function SignupForm({ onClose }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
@@ -43,6 +44,7 @@ function SignupForm() {
 
   return (
     <>
+    <img src={closeButton} alt="Close-Button" className="close-button" onClick={onClose}/>
     <div className='SignUp'>
     <h4>Sign Up</h4>
     </div>

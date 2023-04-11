@@ -2,8 +2,11 @@ import React from "react";
 import menuIcon from "./menuIcon.png";
 import profileIcon from "./profileIcon.png";
 import { useState, useEffect } from "react";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import "./UserMenu.css"
+import LoginForm from "../LoginFormModal/LoginForm";
+import { Modal } from "../../context/Modal";
+import SignupForm from "../SignupFormModal/SignupForm";
+
 
 function LoggedOutUserMenu() {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,7 +32,6 @@ function LoggedOutUserMenu() {
 
   const openLoginFormModal = () => {
     setShowLoginFormModal(true);
-    setShowMenu(false);
   };
 
   const openSignupFormModal = () => {
@@ -39,6 +41,18 @@ function LoggedOutUserMenu() {
 
   const handleLoginClick = () => {
     openLoginFormModal();
+  };
+
+  const handleSignupClick = () => {
+    openSignupFormModal();
+  };
+
+  const handleCloseLoginForm = () => {
+    setShowLoginFormModal(false);
+  };
+
+  const handleCloseSignupForm = () => {
+    setShowSignupFormModal(false);
   };
 
   return (
@@ -51,12 +65,20 @@ function LoggedOutUserMenu() {
         {showMenu && (
           <ul className="profile-dropdown">
             <li onClick={handleLoginClick}>Log In</li>
-            <li onClick={openSignupFormModal}>Sign Up</li>
+            <li onClick={handleSignupClick}>Sign Up</li>
           </ul>
         )}
       </div>
-      {showLoginFormModal && <LoginFormModal onClose={() => setShowLoginFormModal(false)} />}
-      {showSignupFormModal && <SignupFormModal onClose={() => setShowSignupFormModal(false)} />}
+      {showLoginFormModal && (
+        <Modal onClose={handleCloseLoginForm}>
+          <LoginForm onClose={handleCloseLoginForm} />
+        </Modal>
+      )}
+        {showSignupFormModal && (
+        <Modal onClose={handleCloseSignupForm}>
+          <SignupForm onClose={handleCloseSignupForm} />
+        </Modal>
+      )}
     </>
   );
 }

@@ -1,9 +1,13 @@
 .profile-dropdown {
   position: relative;
+  margin-left: 10px;
+  top: 100%;
   left: -10px;
   border: 1px solid #B0B0B0;
   border-radius: 7px;
   padding: 10px;
+  background-color: white;
+  line-height: 30px;
 }
 
 .navBar {

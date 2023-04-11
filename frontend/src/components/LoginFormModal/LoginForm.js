@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
+import closeButton from "./close-24.png"
 
 
-function LoginForm() {
+function LoginForm({ onClose }) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState("");
@@ -32,6 +33,7 @@ function LoginForm() {
 
   return (
     <>
+      <img src={closeButton} alt="Close-Button" className="close-button" onClick={onClose}/>
     <div className='loginSignUp'>
     <h4>Log In or Sign Up</h4>
     </div>
