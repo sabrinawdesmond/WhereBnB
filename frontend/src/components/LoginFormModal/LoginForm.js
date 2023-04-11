@@ -5,7 +5,9 @@ import closeButton from "./close-24.png"
 import SignupForm from '../SignupFormModal/SignupForm';
 import { Modal } from '../../context/Modal';
 import './LoginForm.css'
-
+import gmailLogo from "./gmailLogo.svg"
+import linkedinLogo from './linkedinLogo.svg'
+import githubLogo from './githubLogo.svg'
 
 function LoginForm({ onClose }) {
   const dispatch = useDispatch();
@@ -40,6 +42,7 @@ function LoginForm({ onClose }) {
 
   const openSignupFormModal = () => {
     setShowSignupFormModal(true);
+    setShowLoginFormModal(false)
   };
 
   const handleSignupClick = () => {
@@ -55,8 +58,14 @@ function LoginForm({ onClose }) {
     setShowLoginFormModal(false);
   };
 
+  function handleSignupAndCloseLoginForm() {
+    handleSignupClick();
+    handleCloseLoginForm();
+  }
+
   return (
     <>
+    <div className='loginForm'>
       <img src={closeButton} alt="Close-Button" className="close-button" onClick={onClose}/>
     <div className='loginSignUp'>
     <h4>Log In or Sign Up</h4>
@@ -66,7 +75,7 @@ function LoginForm({ onClose }) {
       <h3>Welcome to Wherebnb</h3>
       <label>
         <br></br>
-        <input
+        <input className='email'
           type="text"
           placeholder='Email'
           value={credential}
@@ -77,7 +86,7 @@ function LoginForm({ onClose }) {
       <label>
         <br>
         </br>
-        <input
+        <input className='password'
           type="password"
           placeholder='Password'
           value={password}
@@ -99,17 +108,17 @@ function LoginForm({ onClose }) {
       <div className="links">
         <br />
         <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank" rel="noopener noreferrer">
-      <button className='externalLinkGitHub' type="submit">GitHub</button>
+      <button className='externalLinkGitHub' type="submit"><img src={githubLogo} alt='gmail' className='github-icon'/>GitHub<div></div></button>
         </a>
         <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank" rel="noopener noreferrer">
-        <button className='externalLinksLinkedin' type="submit">LinkedIn</button>
+        <button className='externalLinksLinkedin' type="submit"><img src={linkedinLogo} alt='gmail' className='linkedin-icon'/>Linkedin<div></div></button>
         </a>
         <a href="mailto:sabrinawdesmond@gmail.com" target="_blank" rel="noopener noreferrer">
-        <button className='externalLinksEmail' type="submit">Email</button>
+        <button className='externalLinksEmail' type="submit"><img src={gmailLogo} alt='gmail' className='gmail-icon'/>Email<div></div></button>
         </a>
       </div>
       <div className='signuplink'>
-        <h5 onClick={handleSignupClick}>New to Wherebnb? Signup!</h5>
+        <p onClick={handleSignupAndCloseLoginForm}>New to Wherebnb? Signup!</p>
       </div>
       {showLoginFormModal && (
         <Modal onClose={handleCloseLoginForm}>
@@ -121,6 +130,7 @@ function LoginForm({ onClose }) {
           <SignupForm onClose={handleCloseSignupForm} />
         </Modal>
       )}
+      </div>
     </>
   );
 }

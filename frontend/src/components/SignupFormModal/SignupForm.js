@@ -4,6 +4,9 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import closeButton from "./close-24.png"
+import gmailLogo from "./gmailLogo.svg"
+import linkedinLogo from './linkedinLogo.svg'
+import githubLogo from './githubLogo.svg'
 
 
 function SignupForm({ onClose }) {
@@ -56,7 +59,7 @@ function SignupForm({ onClose }) {
         <ul>
         {errors.map(error => <li className='errors' key={error}>{error}</li>)}
       </ul>
-          <input
+          <input className="emailSignup"
             type="text"
             value={email}
             placeholder="Email"
@@ -65,7 +68,7 @@ function SignupForm({ onClose }) {
           />
         </label>
         <label>
-          <input
+          <input className="usernameSignup"
             type="text"
             value={username}
             placeholder="Username"
@@ -74,7 +77,7 @@ function SignupForm({ onClose }) {
           />
         </label>
         <label>
-          <input
+          <input className="passwordSignup"
             type="password"
             value={password}
             placeholder="Password"
@@ -83,7 +86,7 @@ function SignupForm({ onClose }) {
           />
         </label>
         <label>
-          <input
+          <input className="confirmPassword"
             type="password"
             value={confirmPassword}
             placeholder="Confirm Password"
@@ -102,13 +105,13 @@ function SignupForm({ onClose }) {
       <div className="links">
         <br />
         <a href="https://github.com/sabrinawdesmond/whereBnB" target="_blank" rel="noopener noreferrer">
-      <button className='externalLinkGitHub' type="submit">GitHub</button>
+      <button className='externalLinkGitHub' type="submit"><img src={githubLogo} alt='gmail' className='github-icon'/>GitHub<div></div></button>
         </a>
         <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank" rel="noopener noreferrer">
-        <button className='externalLinksLinkedin' type="submit">LinkedIn</button>
+        <button className='externalLinksLinkedin' type="submit"><img src={linkedinLogo} alt='gmail' className='linkedin-icon'/>Linkedin<div></div></button>
         </a>
         <a href="mailto:sabrinawdesmond@gmail.com" target="_blank" rel="noopener noreferrer">
-        <button className='externalLinksEmail' type="submit">Email</button>
+        <button className='externalLinksEmail' type="submit"><img src={gmailLogo} alt='gmail' className='gmail-icon'/>Email<div></div></button>
         </a>
       </div>
     </>

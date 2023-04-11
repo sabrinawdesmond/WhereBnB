@@ -2,12 +2,21 @@ body {
   background-color: white;
 }
 
-input {
+.email {
   box-sizing: border-box;
   width: 100%;
-  border-radius: 6px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
   height: 40px;
-  border: 1px solid #B0B0B0;
+  border: 1px solid #b0b0b0;
+}
+.password {
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  height: 40px;
+  border: 1px solid #b0b0b0;
 }
 
 .submitButton {
@@ -59,6 +68,9 @@ input {
   border: 1px solid black;
   background-color: white;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .externalLinksLinkedin {
   font-family: "Figtree", sans-serif;
@@ -72,6 +84,9 @@ input {
   border: 1px solid black;
   background-color: white;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .externalLinksEmail {
   font-family: "Figtree", sans-serif;
@@ -83,7 +98,11 @@ input {
   border-radius: 10px;
   height: 40px;
   border: 1px solid black;
+  margin-bottom: 10px;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h3 {
@@ -95,6 +114,7 @@ h3 {
   margin-top: 15px;
   display: flex;
   justify-content: center;
+  font-size: 13px;
 }
 
 .demoUser {
@@ -120,4 +140,8 @@ h3 {
   border-radius: 10px;
   height: 40px;
   border: none;
+}
+
+.loginForm {
+  text-decoration: none !important;
 }

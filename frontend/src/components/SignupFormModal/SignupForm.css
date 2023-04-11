@@ -70,12 +70,36 @@ body {
   background-color: white;
 }
 
-input {
+.emailSignup {
   box-sizing: border-box;
   width: 100%;
-  border-radius: 6px;
   height: 40px;
   border: 1px solid #B0B0B0;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.usernameSignup {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #B0B0B0;
+}
+
+.passwordSignup {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #B0B0B0;
+}
+
+.confirmPassword {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #B0B0B0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .errors {
