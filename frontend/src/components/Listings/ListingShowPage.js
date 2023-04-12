@@ -12,11 +12,11 @@ const ListingShowPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const listing = useSelector(getListing(listingId));
-  const reviews = useSelector(state => state.reviews);
+  const reviews = useSelector((state) => state.reviews);
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
-    dispatch(fetchReviews(listingId))
+    dispatch(fetchReviews(listingId));
   }, [listingId, dispatch]);
 
   if (!listing) {
@@ -53,7 +53,7 @@ const ListingShowPage = () => {
           {listing.numBathrooms}
         </h3>
       </div>
-        <ListingStats />
+      <ListingStats />
       <div className="listing-description">
         <p>{listing.description}</p>
       </div>
