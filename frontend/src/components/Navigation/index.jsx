@@ -27,7 +27,7 @@ function Navigation() {
             </div>
           </div>
         </Link>
-        <h3>Search</h3>
+        <h3></h3>
         <div className="navLinks">
           {/* <div className="profileDrop">
             <a href="/">

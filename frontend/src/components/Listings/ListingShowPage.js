@@ -5,6 +5,9 @@ import { useEffect } from "react";
 import airbnb from "./airbnb.png";
 import "./ListingShowPage.css";
 import ListingStats from "./ListingStats";
+import ReviewIndexItem from "../Reviews/ReviewIndexItem";
+import ReviewIndex from "../Reviews/ReviewIndex";
+import { fetchReviews } from "../../store/reviews";
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
@@ -13,6 +16,7 @@ const ListingShowPage = () => {
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
+    dispatch(fetchReviews(listingId))
   }, [listingId, dispatch]);
 
   if (!listing) {
@@ -52,6 +56,10 @@ const ListingShowPage = () => {
         <ListingStats />
       <div className="listing-description">
         <p>{listing.description}</p>
+      </div>
+      <div className="listing-reviews">
+        <ReviewIndex />
+        {/* <ReviewIndexItem /> */}
       </div>
     </>
   );

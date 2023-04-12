@@ -4,9 +4,9 @@ export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'REMOVE_REVIEW'
 
-export const receiveReviews = (data) => ({
+export const receiveReviews = (reviews) => ({
   type: RECEIVE_REVIEWS,
-  payload: data
+  payload: reviews
 });
 
 export const receiveReview = (review) => ({
@@ -30,7 +30,8 @@ export const getReview = (reviewId) => state => {
 export const fetchReviews = (listingId) => async dispatch => {
   const response = await csrfFetch (`/api/listings/${listingId}/reviews`);
   const data = await response.json();
-  dispatch(receiveReviews(data))
+  debugger
+  dispatch(receiveReviews(data.reviews))
 }
 
 export const fetchReview = (reviewId) => async dispatch => {
@@ -66,20 +67,13 @@ export const deleteReview = (reviewId) => async dispatch => {
   dispatch(removeReview(reviewId))
 };
 
-const reviewsReducer = (state = {}, action) => {
-  
+const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_REVIEWS:
-      return {...state, ...action.payload.reviews}
-    case RECEIVE_REVIEW:
-      return {...state, [action.payload.id]: action.payload}
-    case REMOVE_REVIEW: 
-      const newState = {...state}
-      delete newState[action.reviewId]
-      return newState
+      return {...state, ...action.payload.users}
     default:
       return state
   }
 };
 
-export default reviewsReducer
+export default usersReducer

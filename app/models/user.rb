@@ -12,6 +12,12 @@ class User < ApplicationRecord
   class_name: :Listing,
   dependent: :destroy
 
+  has_many :reviews,
+  primary_key: :id, 
+  foreign_key: :reviewer_id,
+  class_name: :Review,
+  dependent: :destroy
+
   def self.find_by_credentials(credential, password)
     if credential.match(URI::MailTo::EMAIL_REGEXP)
       user = User.find_by(email: credential)

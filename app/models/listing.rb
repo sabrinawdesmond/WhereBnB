@@ -6,8 +6,8 @@ class Listing < ApplicationRecord
   foreign_key: :host_id,
   class_name: :User
 
-  # has_many :reviews,
-  # dependent: :destroy
+  has_many :reviews,
+  dependent: :destroy
 
   # has_many :reservations,
   # dependent: :destroy

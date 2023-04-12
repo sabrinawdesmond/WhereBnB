@@ -1,13 +1,23 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in, only: [:index, :create, :update, :destroy]
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @reviews = current_user.reviews
+    @reviews = Review.where(listing_id: params[:listing_id]).includes(:reviewer)
+
+    @users = []
+    
+    @reviews.each do |review|
+      @users << review.reviewer
+    end
     render :index
   end
 
   def show
-    @reviews = @listing.reviews
+    # @listing = Listing.find(params[:listing_id])
+
+    # puts "Listing: #{@listing}"
+
+    @review = Review.find(params[:id])
     render :show
   end
 
