@@ -72,6 +72,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.links a {
+  text-decoration: none;
+}
+
+
 .externalLinksLinkedin {
   font-family: "Figtree", sans-serif;
   font-weight: bolder;

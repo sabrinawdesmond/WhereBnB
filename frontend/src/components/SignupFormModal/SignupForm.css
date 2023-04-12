@@ -22,6 +22,9 @@
   padding-bottom: 5px;
 }
 
+.links a {
+  text-decoration: none;
+}
 
 .externalLinkGitHub {
   font-family: "Roboto", sans-serif;
