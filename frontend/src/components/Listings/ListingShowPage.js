@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import airbnb from "./airbnb.png";
 import "./ListingShowPage.css";
 import ListingStats from "./ListingStats";
-import ReviewIndexItem from "../Reviews/ReviewIndexItem";
 import ReviewIndex from "../Reviews/ReviewIndex";
 import { fetchReviews } from "../../store/reviews";
 
@@ -13,6 +12,7 @@ const ListingShowPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const listing = useSelector(getListing(listingId));
+  const reviews = useSelector(state => state.reviews);
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
@@ -58,8 +58,7 @@ const ListingShowPage = () => {
         <p>{listing.description}</p>
       </div>
       <div className="listing-reviews">
-        <ReviewIndex />
-        {/* <ReviewIndexItem /> */}
+        <ReviewIndex reviews={reviews} />
       </div>
     </>
   );

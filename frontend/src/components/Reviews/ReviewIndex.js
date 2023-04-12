@@ -1,29 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
-import { fetchReviews, getReviews } from "../../store/reviews";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getReviews } from "../../store/reviews";
 import ReviewIndexItem from "./ReviewIndexItem";
 import { useParams } from "react-router-dom";
 
 
 const ReviewIndex = () => {
-  const dispatch = useDispatch();
+
   const reviews = useSelector(getReviews)
-  const { listingId } = useParams();
+  const {listingId} = useParams();
 
-  useEffect(() => {
-    dispatch(fetchReviews(listingId));
-  }, [])
-
-  const reviewItems = reviews.map((review) => {
-    return <ReviewIndexItem review={review} listingId={listingId}/>
-})
-  
   return (
     <>
     <div className="review-index">
-      <ul id='reviews-index-list'>
+      <ul>
       {reviews.map((review) => {
-    return <ReviewIndexItem review={review} listingId={listingId}/>
+  return <ReviewIndexItem key={review.id} reviewProp={review} listingId={listingId}/>
 })}
       </ul>
         <h2>HelloWorld</h2>
