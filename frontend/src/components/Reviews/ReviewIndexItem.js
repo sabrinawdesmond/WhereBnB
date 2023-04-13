@@ -1,10 +1,10 @@
 
 const ReviewIndexItem = ({ reviewProp, user }) => {
-  
+  console.log(reviewProp)
   return (
     <>
     <div className="review-item">
-      <div>Review by:  </div>
+      <div>Review by: {user.username} </div>
       <div>Overall rating: {reviewProp.overall}</div>
       <div>Cleanliness: {reviewProp.cleanliness}</div>
       <div>Communication: {reviewProp.communication}</div>
