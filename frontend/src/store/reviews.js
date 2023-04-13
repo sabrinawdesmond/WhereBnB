@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'REMOVE_REVIEW'
+export const RESET_REVIEWS = 'RESET_REVIEWS'
 
 export const receiveReviews = (data) => ({
   type: RECEIVE_REVIEWS,
@@ -17,6 +18,10 @@ export const receiveReview = (review) => ({
 export const removeReview = (reviewId) => ({
   type: REMOVE_REVIEW,
   payload: reviewId
+});
+
+export const resetReviews = () => ({
+  type: RESET_REVIEWS
 });
 
 export const getReviews = state => {
@@ -77,6 +82,8 @@ const reviewsReducer = (state = {}, action) => {
       const newState = {...state}
       delete newState[action.reviewId]
       return newState
+    case RESET_REVIEWS:
+        return {}
     default:
       return state
   }

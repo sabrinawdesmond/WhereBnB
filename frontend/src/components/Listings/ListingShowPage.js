@@ -6,7 +6,7 @@ import airbnb from "./airbnb.png";
 import "./ListingShowPage.css";
 import ListingStats from "./ListingStats";
 import ReviewIndex from "../Reviews/ReviewIndex";
-import { fetchReviews } from "../../store/reviews";
+import { fetchReviews, resetReviews } from "../../store/reviews";
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ const ListingShowPage = () => {
   useEffect(() => {
     dispatch(fetchListing(listingId));
     dispatch(fetchReviews(listingId));
+    dispatch(resetReviews())
   }, [listingId, dispatch]);
 
   if (!listing) {
