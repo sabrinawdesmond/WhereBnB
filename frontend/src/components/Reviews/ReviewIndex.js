@@ -7,6 +7,8 @@ const ReviewIndex = () => {
   const reviews = useSelector(getReviews);
   const { listingId } = useParams();
 
+
+
   return (
     <>
       <div className="review-index">
@@ -17,6 +19,7 @@ const ReviewIndex = () => {
                 key={review.id}
                 reviewProp={review}
                 listingId={listingId}
+                user={review.user}
               />
             );
           })}

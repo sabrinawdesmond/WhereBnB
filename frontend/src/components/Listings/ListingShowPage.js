@@ -59,6 +59,8 @@ const ListingShowPage = () => {
         <p>{listing.description}</p>
       </div>
       <div className="listing-reviews">
+        <h2>Reviews</h2>
+       <br></br>
         <ReviewIndex reviews={reviews} />
       </div>
     </>
