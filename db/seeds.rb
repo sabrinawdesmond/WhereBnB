@@ -16,7 +16,7 @@ ApplicationRecord.transaction do
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!("users")
-  # ApplicationRecord.connection.reset_pk_sequence!("listings")
+  ApplicationRecord.connection.reset_pk_sequence!("listings")
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -27,7 +27,7 @@ ApplicationRecord.transaction do
   )
 
    # More users
-  10.times do
+  13.times do
     User.create!({
       username: Faker::Internet.unique.username(specifier: 3),
       email: Faker::Internet.unique.email,
@@ -120,7 +120,7 @@ ApplicationRecord.transaction do
       num_beds: num_beds,
       num_rooms: num_rooms,
       num_bathrooms: num_bathrooms,
-      host_id:  Faker::Number.unique.between(from: 2, to: 4),
+      host_id: Faker::Number.between(from: 2, to: 4),
     })
   end
   Faker::UniqueGenerator.clear
