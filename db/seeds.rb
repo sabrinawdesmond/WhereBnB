@@ -120,9 +120,10 @@ ApplicationRecord.transaction do
       num_beds: num_beds,
       num_rooms: num_rooms,
       num_bathrooms: num_bathrooms,
-      host_id: rand(2..4),
+      host_id:  Faker::Number.unique.between(from: 2, to: 4),
     })
   end
+  Faker::UniqueGenerator.clear
 
   puts "creating reviews"
 
