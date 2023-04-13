@@ -15,7 +15,7 @@ const ListingShowPage = () => {
   const { listingId } = useParams();
   const listing = useSelector(getListing(listingId));
   const reviews = useSelector((state) => state.reviews);
-  
+
   const [showReviewFormModal, setShowReviewFormModal] = useState(false);
 
   const openReviewFormModal = () => {

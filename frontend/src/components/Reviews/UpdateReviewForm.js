@@ -1,18 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ReviewForm.css";
 import * as reviewActions from "../../store/reviews";
 import closeButton from "./close-24.png";
-import { Modal } from "../../context/Modal";
-import LoginForm from "../LoginFormModal/LoginForm";
-import React from "react";
 
-const ReviewForm = ({ onClose }) => {
+const UpdateReviewForm = ({ onClose }) => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
   const { listingId } = useParams();
-  const history = useHistory()
 
   const [overall, setOverall] = useState();
   const [cleanliness, setCleanliness] = useState();
@@ -23,7 +19,7 @@ const ReviewForm = ({ onClose }) => {
   const [value, setValue] = useState();
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
-  const [showLoginFormModal, setShowLoginFormModal] = useState(false)
+
   const [showReviewForm, setShowReviewForm] = useState(false);
 
   const handleReviewFormClose = () => {
@@ -49,14 +45,14 @@ const ReviewForm = ({ onClose }) => {
         .then(() => {
           handleReviewFormClose();
           onClose();
-          history.push(`/listings/${listingId}`)
         })
-        .catch((errors) => {
-          setErrors(errors.message);
+        .catch((response) => {
+          if (response.data && response.data.errors) {
+            setErrors(response.data.errors);
+          }
         });
-    } else {
-      setErrors("You must be logged in to leave a review");
-  }};
+    } 
+  };
 
   return (
     <>
@@ -67,9 +63,6 @@ const ReviewForm = ({ onClose }) => {
           className="close-button"
           onClick={onClose}
         />
-        {errors.length > 0 && (
-  <div className="error">{errors}</div>
-)}
         <form className="form" onSubmit={handleSubmit}>
           <h2>How was your stay?</h2>
           <br></br>
@@ -82,6 +75,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="overall"
                   value={value}
+                  checked={Number(overall) === value}
                   onChange={(e) => setOverall(e.target.value)}
                 />
                 {value}
@@ -98,6 +92,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="cleanliness"
                   value={value}
+                  checked={Number(cleanliness) === value}
                   onChange={(e) => setCleanliness(e.target.value)}
                 />
                 {value}
@@ -114,6 +109,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="communication"
                   value={value}
+                  checked={Number(communication) === value}
                   onChange={(e) => setCommunication(e.target.value)}
                 />
                 {value}
@@ -130,6 +126,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="location"
                   value={value}
+                  checked={Number(location) === value}
                   onChange={(e) => setLocation(e.target.value)}
                 />
                 {value}
@@ -146,6 +143,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="check-in"
                   value={value}
+                  checked={Number(check_in) === value}
                   onChange={(e) => setCheckIn(e.target.value)}
                 />
                 {value}
@@ -161,6 +159,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="accuracy"
                   value={value}
+                  checked={Number(accuracy) === value}
                   onChange={(e) => setAccuracy(e.target.value)}
                 />
                 {value}
@@ -176,6 +175,7 @@ const ReviewForm = ({ onClose }) => {
                   type="radio"
                   name="value"
                   value={value}
+                  checked={Number(value) === value}
                   onChange={(e) => setValue(e.target.value)}
                 />
                 {value}
@@ -196,13 +196,8 @@ const ReviewForm = ({ onClose }) => {
           </button>
         </form>
       </div>
-      {showLoginFormModal && (
-      <Modal>
-        <LoginForm />
-      </Modal>
-    )}
     </>
   );
 };
 
-export default ReviewForm;
+export default UpdateReviewForm;

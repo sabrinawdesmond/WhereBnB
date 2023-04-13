@@ -22,6 +22,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
+    # debugger 
     @review = Review.new(review_params)
 
     if @review.save
@@ -32,9 +33,10 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
+    debugger
     @review = Review.find_by(id: params[:id])
 
-    if @review.user_id == current_user.id
+    if @review.reviewer_id == current_user.id
       if @review.update(review_params)
         render :show
       else
@@ -47,7 +49,7 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    if current_user.id == @review.user_id
+    if current_user.id == @review.reviewer_id
       @review.delete
       render json: { message: ["Review Deleted"] }
     else

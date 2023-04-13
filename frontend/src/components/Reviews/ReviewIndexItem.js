@@ -1,7 +1,24 @@
-import "./Reviews.css"
+import "./Reviews.css";
+import { useDispatch, useSelector } from "react-redux";
+import * as reviewActions from "../../store/reviews";
+import { useHistory, useParams } from "react-router-dom";
+import React from "react";
 
 const ReviewIndexItem = ({ reviewProp, user }) => {
-  console.log(reviewProp);
+  const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
+  const isCurrentUser = (user.id === sessionUser?.id);
+  const { listingId } = useParams();
+  const history = useHistory();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(reviewActions.deleteReview(reviewProp.id)).then(() => {
+      dispatch(reviewActions.getReviews());
+    });
+    history.push(`/listings/${listingId}`)
+  }
+
   return (
     <>
       <div className="review-item">
@@ -17,6 +34,7 @@ const ReviewIndexItem = ({ reviewProp, user }) => {
         <br></br>
         <div className="description">{reviewProp.body}</div>
         <br></br>
+        {isCurrentUser && <button onClick={handleClick}>Delete</button>}
       </div>
     </>
   );
