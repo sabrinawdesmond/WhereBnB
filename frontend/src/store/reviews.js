@@ -61,7 +61,7 @@ export const updateReview = (review) => async dispatch => {
     headers: {"Content-Type": "application/json"}
   })
   const data = await response.json();
-  dispatch(receiveReview(data))
+  dispatch(receiveReview(data.review))
 };
 
 export const deleteReview = (reviewId) => async dispatch => {

@@ -20,6 +20,7 @@ if (reviews) {
         reviewProp={review}
         listingId={listingId}
         user={reviewer}
+        originalReviewData={review}
       />)
       }
     })

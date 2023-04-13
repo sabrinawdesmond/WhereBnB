@@ -6,24 +6,25 @@ import "./ReviewForm.css";
 import * as reviewActions from "../../store/reviews";
 import closeButton from "./close-24.png";
 
-const UpdateReviewForm = ({ onClose }) => {
+const UpdateReviewForm = ({ onClose, reviewData }) => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
-
-  const [overall, setOverall] = useState();
-  const [cleanliness, setCleanliness] = useState();
-  const [communication, setCommunication] = useState();
-  const [location, setLocation] = useState();
-  const [check_in, setCheckIn] = useState();
-  const [accuracy, setAccuracy] = useState();
-  const [value, setValue] = useState();
-  const [body, setBody] = useState("");
+  const [overall, setOverall] = useState(reviewData.overall);
+  const [cleanliness, setCleanliness] = useState(reviewData.cleanliness);
+  const [communication, setCommunication] = useState(reviewData.communication);
+  const [location, setLocation] = useState(reviewData.location);
+  const [check_in, setCheckIn] = useState(reviewData.check_in);
+  const [accuracy, setAccuracy] = useState(reviewData.accuracy);
+  const [value, setValue] = useState(reviewData.value);
+  const [body, setBody] = useState(reviewData.body);
   const [errors, setErrors] = useState([]);
+  const sessionUser = useSelector((state) => state.session.user);
 
-  const [showReviewForm, setShowReviewForm] = useState(false);
 
-  const handleReviewFormClose = () => {
-    setShowReviewForm(false);
+  const [showUpdateReviewForm, setShowUpdateReviewForm] = useState(false);
+
+  const handleUpdateReviewFormClose = () => {
+    setShowUpdateReviewForm(false);
   };
 
   const handleSubmit = (e) => {
@@ -41,9 +42,9 @@ const UpdateReviewForm = ({ onClose }) => {
         reviewer_id: sessionUser.id,
         listing_id: listingId,
       };
-      dispatch(reviewActions.createReview(reviewData))
+      dispatch(reviewActions.updateReview(reviewData))
         .then(() => {
-          handleReviewFormClose();
+          handleUpdateReviewFormClose();
           onClose();
         })
         .catch((response) => {
@@ -51,12 +52,12 @@ const UpdateReviewForm = ({ onClose }) => {
             setErrors(response.data.errors);
           }
         });
-    } 
+    }
   };
 
   return (
     <>
-      <div className="reviewForm">
+      <div className="updateReviewForm">
         <img
           src={closeButton}
           alt="Close-Button"
@@ -191,7 +192,7 @@ const UpdateReviewForm = ({ onClose }) => {
           ></textarea>
           <br></br>
 
-          <button className="submitReview" onClick={handleReviewFormClose}>
+          <button className="submitReview" onClick={handleUpdateReviewFormClose}>
             Submit
           </button>
         </form>

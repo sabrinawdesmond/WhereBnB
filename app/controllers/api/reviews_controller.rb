@@ -33,10 +33,10 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    debugger
-    @review = Review.find_by(id: params[:id])
+    # debugger
+    @review = Review.find(params[:id])
 
-    if @review.reviewer_id == current_user.id
+    if current_user.id == @review.reviewer_id
       if @review.update(review_params)
         render :show
       else
