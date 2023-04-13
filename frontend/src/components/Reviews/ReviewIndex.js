@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { getReviews } from "../../store/reviews";
 import ReviewIndexItem from "./ReviewIndexItem";
 import { useParams } from "react-router-dom";
+import "./Reviews.css"
 
 const ReviewIndex = ({ user }) => {
   const reviews = useSelector(getReviews);
@@ -30,9 +31,7 @@ if (reviews) {
   return (
     <>
       <div className="review-index">
-        <ul>
        {reviewItems}
-          </ul>
       </div>
     </>
   );

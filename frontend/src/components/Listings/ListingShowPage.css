@@ -8,119 +8,127 @@
   justify-content: center;
   align-items: center; */
   box-sizing: border-box;
- }
- 
- 
- .listing-photo img {
+}
+
+.listing-photo img {
   display: flex;
   height: 385.4px;
   width: 560px;
- }
- 
- 
- .listing-small-photos img {
+}
+
+.listing-small-photos img {
   height: 185px;
   width: 272px;
- }
- 
- 
- .listing-photo {
+}
+
+.listing-photo {
   display: flex;
   flex-direction: row;
   width: 1120px;
   height: 385px;
- }
- 
- 
- .listing-small-photos {
+}
+
+.listing-small-photos {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 20px;
- }
- 
- 
- .listing-small-photos {
+}
+
+.listing-small-photos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   margin-left: 10px;
- }
- 
- 
- .ListingPage h1 {
+}
+
+.ListingPage h1 {
   font-size: 26px;
   font-weight: 600;
   /* line-height: 30px; */
- }
- .ListingPage span {
+}
+.ListingPage span {
   font-weight: 600;
   text-decoration: underline;
   display: flex;
- }
- 
- 
- .listing-info {
+}
+
+.listing-info {
   padding-left: 170px;
   padding-right: 170px;
   padding-top: 20px;
   font-weight: 1000;
- }
- 
- 
- .listing-description {
-    padding-left: 170px;
-    padding-right: 170px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-size: 18px;
-    line-height: 1.25em;
-  }
- 
- 
- 
- 
- .host-room-info {
+}
+
+.listing-description {
   padding-left: 170px;
   padding-right: 170px;
   padding-bottom: 20px;
   padding-top: 20px;
- }
- 
- 
- 
- 
- .room-info h3 {
+  font-size: 18px;
+  line-height: 1.25em;
+}
+
+.host-room-info {
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.room-info h3 {
   padding-left: 170px;
   padding-right: 170px;
   padding-bottom: 20px;
   font-size: 16px;
   font-weight: 400;
- }
- 
- 
- .stats {
+}
+
+.stats {
   box-sizing: border-box;
   padding-top: 10px;
   margin-right: 170px;
   padding-bottom: 10px;
-  border-top: 1px solid #B0B0B0;
-  border-bottom: 1px solid #B0B0B0;
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
   margin-left: 170px;
   box-shadow: none;
- }
- 
- .details p {
-  color: #717171;
- }
+}
 
- .listing-reviews {
+.details p {
+  color: #717171;
+}
+
+.listing-reviews {
   padding-left: 170px;
   font-size: 18px;
   line-height: 1.25em;
-  
- }
+}
 
- 
- 
+.reviews {
+  display: flex;
+  text-decoration: underline;
+}
+
+.reviewButton {
+  transition: opacity 1.25s;
+  background-image: linear-gradient(
+    to left,
+    #e61e4d 27.5%,
+    #e31c5f 40%,
+    #d70466 57.5%,
+    #bd1e59 75%,
+    #bd1e59 100%
+  );
+  font-family: "Figtree", sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  color: white;
+  box-sizing: border-box;
+  margin-left: 170px;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}

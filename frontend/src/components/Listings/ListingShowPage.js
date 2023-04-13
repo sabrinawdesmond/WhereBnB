@@ -1,18 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchListing, getListing } from "../../store/listings";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import airbnb from "./airbnb.png";
 import "./ListingShowPage.css";
 import ListingStats from "./ListingStats";
 import ReviewIndex from "../Reviews/ReviewIndex";
 import { fetchReviews, resetReviews } from "../../store/reviews";
+import ReviewForm from "../Reviews/ReviewForm";
+import { Modal } from "../../context/Modal";
 
 const ListingShowPage = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
   const listing = useSelector(getListing(listingId));
   const reviews = useSelector((state) => state.reviews);
+  
+  const [showReviewFormModal, setShowReviewFormModal] = useState(false);
+
+  const openReviewFormModal = () => {
+    setShowReviewFormModal(true);
+  };
+
+  const handleReviewClick = () => {
+    openReviewFormModal()
+  };
+
+  const handleCloseReviewForm = () => {
+    setShowReviewFormModal(false)
+  }
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
@@ -59,10 +75,20 @@ const ListingShowPage = () => {
         <p>{listing.description}</p>
       </div>
       <div className="listing-reviews">
-        <h2>Reviews</h2>
+        <h2 className="reviews">Reviews</h2>
        <br></br>
         <ReviewIndex reviews={reviews} />
       </div>
+      <br></br>
+      <div className="leave-review">
+      <button className="reviewButton" onClick={handleReviewClick}>Leave a Review
+      </button>
+      </div>
+      {showReviewFormModal && (
+        <Modal onClose={handleCloseReviewForm}>
+          <ReviewForm onClose={handleCloseReviewForm} />
+        </Modal>
+      )}
     </>
   );
 };

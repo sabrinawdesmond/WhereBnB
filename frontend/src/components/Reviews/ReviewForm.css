@@ -1,0 +1,25 @@
+.reviewForm {
+  line-height: 1.5;
+}
+
+.submitReview {
+  transition: opacity 1.25s;
+  background-image: linear-gradient(
+    to left,
+    #e61e4d 27.5%,
+    #e31c5f 40%,
+    #d70466 57.5%,
+    #bd1e59 75%,
+    #bd1e59 100%
+  );
+  font-family: "Figtree", sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  color: white;
+  box-sizing: border-box;
+  margin-left: 170px;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
