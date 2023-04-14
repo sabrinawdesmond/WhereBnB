@@ -20,7 +20,6 @@ const UpdateReviewForm = ({ onClose, reviewData }) => {
   const [errors, setErrors] = useState([]);
   const sessionUser = useSelector((state) => state.session.user);
 
-
   const [showUpdateReviewForm, setShowUpdateReviewForm] = useState(false);
 
   const handleUpdateReviewFormClose = () => {
@@ -58,144 +57,153 @@ const UpdateReviewForm = ({ onClose, reviewData }) => {
   return (
     <>
       <div className="updateReviewForm">
-        <img
-          src={closeButton}
-          alt="Close-Button"
-          className="close-button"
-          onClick={onClose}
-        />
-        <form className="form" onSubmit={handleSubmit}>
-          <h2>How was your stay?</h2>
-          <br></br>
-          <div>
-            Overall:
+        <div className="closeButton">
+          <img
+            src={closeButton}
+            alt="Close-Button"
+            className="close-button"
+            onClick={onClose}
+          />
+        </div>
+        <div className="reviewForm">
+          <form className="form" onSubmit={handleSubmit}>
+            <h2>How was your stay?</h2>
             <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="overall"
-                  value={value}
-                  checked={Number(overall) === value}
-                  onChange={(e) => setOverall(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
+            <div>
+              Overall:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="overall"
+                    value={value}
+                    checked={Number(overall) === value}
+                    onChange={(e) => setOverall(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
 
-          <div>
-            Cleanliness:
-            <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="cleanliness"
-                  value={value}
-                  checked={Number(cleanliness) === value}
-                  onChange={(e) => setCleanliness(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
+            <div>
+              Cleanliness:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="cleanliness"
+                    value={value}
+                    checked={Number(cleanliness) === value}
+                    onChange={(e) => setCleanliness(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
 
-          <div>
-            Communication:
-            <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="communication"
-                  value={value}
-                  checked={Number(communication) === value}
-                  onChange={(e) => setCommunication(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
+            <div>
+              Communication:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="communication"
+                    value={value}
+                    checked={Number(communication) === value}
+                    onChange={(e) => setCommunication(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
 
-          <div>
-            Location:
-            <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="location"
-                  value={value}
-                  checked={Number(location) === value}
-                  onChange={(e) => setLocation(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
+            <div>
+              Location:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="location"
+                    value={value}
+                    checked={Number(location) === value}
+                    onChange={(e) => setLocation(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
 
-          <div>
-            Check-In:
+            <div>
+              Check-In:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="check-in"
+                    value={value}
+                    checked={Number(check_in) === value}
+                    onChange={(e) => setCheckIn(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
+            <div>
+              Accuracy:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="accuracy"
+                    value={value}
+                    checked={Number(accuracy) === value}
+                    onChange={(e) => setAccuracy(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
+            <div>
+              Value:
+              <br></br>
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="value"
+                    value={value}
+                    checked={Number(value) === value}
+                    onChange={(e) => setValue(e.target.value)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
             <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="check-in"
-                  value={value}
-                  checked={Number(check_in) === value}
-                  onChange={(e) => setCheckIn(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
-          <div>
-            Accuracy:
+            <h2>Let others know about your experience!</h2>
+            <div className="text-area">
+              <textarea
+              className="text"
+                name="body"
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+              ></textarea>
+            </div>
             <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="accuracy"
-                  value={value}
-                  checked={Number(accuracy) === value}
-                  onChange={(e) => setAccuracy(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
-          <div>
-            Value:
-            <br></br>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="value"
-                  value={value}
-                  checked={Number(value) === value}
-                  onChange={(e) => setValue(e.target.value)}
-                />
-                {value}
-              </label>
-            ))}
-          </div>
-          <br></br>
-          <h2>Let others know about your experience!</h2>
-          <textarea
-            name="body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          ></textarea>
-          <br></br>
-
-          <button className="submitReview" onClick={handleUpdateReviewFormClose}>
-            Submit
-          </button>
-        </form>
+            <button
+              className="submitReview"
+              onClick={handleUpdateReviewFormClose}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

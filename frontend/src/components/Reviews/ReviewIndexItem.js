@@ -35,6 +35,7 @@ const ReviewIndexItem = ({ reviewProp, user }) => {
     setUpdateReviewFormModal(false);
   };
   
+  //loop through reviews and only get the ratings reviewProp.overall//
 
   return (
     <>
@@ -51,14 +52,17 @@ const ReviewIndexItem = ({ reviewProp, user }) => {
         <br></br>
         <div className="description">{reviewProp.body}</div>
         <br></br>
-        {isCurrentUser && <button onClick={handleEditClick}>Edit</button>}
-        {isCurrentUser && <button onClick={handleClick}>Delete</button>}
-      </div>
+        {isCurrentUser && <button className="editButtons" onClick={handleEditClick}>Edit</button>}
+        {isCurrentUser && <button className="editButtons" onClick={handleClick}>Delete</button>}
       {showUpdateReviewFormModal && (
         <Modal>
           <UpdateReviewForm onClose={handleClose} reviewData={reviewProp}/>
         </Modal>
       )}
+      <br></br>
+      <br></br>
+
+      </div>
     </>
   );
 };

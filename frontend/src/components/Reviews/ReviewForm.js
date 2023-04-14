@@ -61,12 +61,14 @@ const ReviewForm = ({ onClose }) => {
   return (
     <>
       <div className="reviewForm">
+        <div className="closeButton">
         <img
           src={closeButton}
           alt="Close-Button"
           className="close-button"
           onClick={onClose}
         />
+        </div>
         {errors.length > 0 && (
   <div className="error">{errors}</div>
 )}
@@ -182,13 +184,18 @@ const ReviewForm = ({ onClose }) => {
               </label>
             ))}
           </div>
+          <div>
           <br></br>
           <h2>Let others know about your experience!</h2>
+          </div>
+          <div className="text-area">
           <textarea
+          className="text"
             name="body"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           ></textarea>
+          </div>
           <br></br>
 
           <button className="submitReview" onClick={handleReviewFormClose}>

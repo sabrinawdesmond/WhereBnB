@@ -13,3 +13,9 @@
 .description {
   font-style: italic;
 }
+
+.editButtons {
+  font-family: "Figtree", sans-serif;
+  border-radius: 6px;
+  margin-right: 5px;
+}
