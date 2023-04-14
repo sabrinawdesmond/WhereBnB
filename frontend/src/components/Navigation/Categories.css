@@ -1,0 +1,7 @@
+.categories {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #B0B0B0; 
+  padding-top: 15px;
+  padding-bottom: 15px
+}

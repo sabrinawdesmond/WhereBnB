@@ -5,6 +5,7 @@ import logoImage from "./logo.png";
 import { Link } from "react-router-dom";
 import LoggedInUserMenu from "./LoggedInUserMenu";
 import LoggedOutUserMenu from "./LoggedOutUserMenu";
+import Categories from "./Categories";
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -39,6 +40,9 @@ function Navigation() {
           </div> */}
           {sessionLinks}
         </div>
+      </div>
+      <div>
+        <Categories />
       </div>
     </>
   );
