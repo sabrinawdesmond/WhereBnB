@@ -29,7 +29,8 @@ const UpdateReviewForm = ({ onClose, reviewData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (sessionUser) {
-      const reviewData = {
+      const reviewItem = {
+        id: reviewData.id,
         overall,
         cleanliness,
         communication,
@@ -41,7 +42,7 @@ const UpdateReviewForm = ({ onClose, reviewData }) => {
         reviewer_id: sessionUser.id,
         listing_id: listingId,
       };
-      dispatch(reviewActions.updateReview(reviewData))
+      dispatch(reviewActions.updateReview(reviewItem))
         .then(() => {
           handleUpdateReviewFormClose();
           onClose();
