@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   background-position: top 0 left 300;
-  background-color: #FF385C;
+	background-image: radial-gradient( circle at center, #FF385C 0%,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
+	transition: opacity 1.25s;
 	background-size: 100%;
   width: 87.5% !important;
 	/* height: 100%; */
@@ -15,7 +16,6 @@
 	color: whitesmoke;
 	line-height: 20px;
 	border: none;
-	box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
 }
 
 #sb-button_hover {
@@ -25,7 +25,8 @@
 	align-items: center;
 	background-position: top 0 left 300;
   background-image: radial-gradient( circle at center, #FF385C 0%,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
-  background-size: 150%;
+  transition: opacity 1.25s;
+	background-size: 150%;
 	background-color: #ea3b13; 
 	background-blend-mode: normal;
 	width: 87.5% !important;

@@ -8,6 +8,7 @@ import "./LoginForm.css";
 import gmailLogo from "./gmailLogo.svg";
 import linkedinLogo from "./linkedinLogo.svg";
 import githubLogo from "./githubLogo.svg";
+import SubmitButton from "../Buttons/SubmitButton"
 
 function LoginForm({ onClose }) {
   const dispatch = useDispatch();
@@ -110,9 +111,10 @@ function LoginForm({ onClose }) {
             ))}
           </ul>
           <div className="loginButton">
-            <button className="submitButton" type="submit">
+            {/* <button className="submitButton" type="submit">
               Continue
-            </button>
+            </button> */}
+            <SubmitButton id="login" clickFunction={handleSubmit} textContext='Continue' />
           </div>
         </form>
         <div className="demoUser">
